@@ -2,5 +2,5 @@
 
 my basic working structure
 
--- goal -- 
+## goal
 make a yeoman app from this
