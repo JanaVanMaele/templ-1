@@ -1,0 +1,15 @@
+{
+  "name": "trianglegrid",
+  "_cacheHeaders": {
+    "ETag": "\"2e098f-5ef-5168436d2128a\"",
+    "Last-Modified": "Wed, 20 May 2015 14:26:34 GMT",
+    "Content-Length": "1519",
+    "Content-Type": "application/javascript"
+  },
+  "_release": "e-tag:2e098f-5e",
+  "main": "index.js",
+  "_source": "http://static.cloudswimmers.com/js/trianglegrid.js",
+  "_target": "*",
+  "_originalSource": "http://static.cloudswimmers.com/js/trianglegrid.js",
+  "_direct": true
+}

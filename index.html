@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script>
+		$(document).ready(function(){var fps=60;var canvas=$("#backgroundCanvas")[0];canvas.width=$(window).width();canvas.height=$(window).height();var animation=0;var maxAnimation=400;if(canvas.getContext){var context=canvas.getContext("2d");context.clearRect(0,0,canvas.width,canvas.height)}var blackWalker=new TriangleWalker();var colorWalker=new TriangleWalker();blackWalker.init(40,"rgba(0, 0, 0, 0.5)");colorWalker.init(80,fillColor);setInterval(draw,fps);function draw(){animation++;if(animation==maxAnimation){context.clearRect(0,0,canvas.width,canvas.height);animation=0}blackWalker.update();blackWalker.draw();colorWalker.update();colorWalker.draw()}function TriangleWalker(){this.init=function(radius,color){console.log(radius);console.log(color);this.x=canvas.width/2;this.y=canvas.height/2;this.prevX=canvas.width/2;this.prevY=canvas.height/2;this.r=radius;this.strokeColor=color};this.update=function(){var angle=((Math.PI*2)/6)*Math.floor(Math.random()*6);this.x+=Math.cos(angle)*this.r;this.y+=Math.sin(angle)*this.r;if(this.x<-80||this.x>canvas.width+80){this.x=this.prevX;this.y=this.prevY}if(this.y<-80||this.y>canvas.height+80){this.x=this.prevX;this.y=this.prevY}};this.draw=function(){context.strokeStyle=this.strokeColor;context.beginPath();context.moveTo(this.x,this.y);context.lineTo(this.prevX,this.prevY);context.closePath();context.stroke();this.prevX=this.x;this.prevY=this.y}}$(window).resize(resetCanvas);function resetCanvas(){canvas.width=$(window).width();canvas.height=$(window).height()}});
+	</script>
+</body>
+</html>
